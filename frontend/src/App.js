@@ -231,7 +231,7 @@ function App() {
 
                 {results.plan && (
                   <div className="plan-section">
-                    <h3>📋 Execution Plan</h3>
+                    <h3>Execution Plan</h3>
                     <p className="plan-analysis">{results.plan.analysis}</p>
                     <div className="steps">
                       {results.plan.steps.map((step, index) => (
@@ -250,13 +250,13 @@ function App() {
 
                 {results.step_results && (
                   <div className="step-results-section">
-                    <h3>⚡ Execution Results</h3>
+                    <h3>Execution Results</h3>
                     {results.step_results.map((stepResult, index) => (
                       <div key={index} className={`step-result ${stepResult.success ? 'success' : 'error'}`}>
                         <div className="step-result-header">
                           <span>Step {stepResult.step_number}: {stepResult.description}</span>
                           <span className={`status ${stepResult.success ? 'success' : 'error'}`}>
-                            {stepResult.success ? '✅' : '❌'}
+                            {stepResult.success ? 'Success' : 'Failed'}
                           </span>
                         </div>
                         {stepResult.result && stepResult.result.result && (
@@ -276,7 +276,7 @@ function App() {
 
                 {results.final_summary && (
                   <div className="final-summary">
-                    <h3>📊 Summary</h3>
+                    <h3>Summary</h3>
                     <div className="summary-stats">
                       <div className="summary-item">
                         <strong>Total Steps:</strong> {results.final_summary.total_steps}
